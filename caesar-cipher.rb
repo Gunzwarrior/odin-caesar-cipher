@@ -10,10 +10,14 @@ def caesar_cipher(string, number)
   
   my_string_array = string.chars
   result = my_string_array.map do |letter|
+    if letter == letter.upcase
+      alphabet_array[alphabet_array.index(letter.downcase) + number].upcase
+    else
       alphabet_array[alphabet_array.index(letter) + number]
+    end
   end
   p result
 end
 
 #test
-caesar_cipher("abcdef", 5)
+caesar_cipher("abGdEf", 5)
