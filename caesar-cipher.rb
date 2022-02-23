@@ -7,12 +7,13 @@ def caesar_cipher(string, number)
                     "p", "q", "r", "s", "t",
                     "u", "v", "w", "x", "y", "z"]
   # magic code
-  my_string_array = string.chars
-  p my_string_array.map {|letter| alphabet_array.index(letter)}
   
-
-  #use index function
+  my_string_array = string.chars
+  result = my_string_array.map do |letter|
+      alphabet_array[alphabet_array.index(letter) + number]
+  end
+  p result
 end
 
 #test
-caesar_cipher("What a string!", 0)
+caesar_cipher("abcdef", 5)
