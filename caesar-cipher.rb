@@ -10,16 +10,26 @@ def caesar_cipher(string, number)
   
   my_string_array = string.chars
   result = my_string_array.map do |letter|
-    if !alphabet_array.include?(letter.downcase)
+    if alphabet_array.none?(letter.downcase)
       letter
     elsif letter == letter.upcase
-      alphabet_array[alphabet_array.index(letter.downcase) + number].upcase
+      if (alphabet_array.index(letter.downcase) + number) <= (alphabet_array.size - 1)
+        alphabet_array[alphabet_array.index(letter.downcase) + number].upcase
+      else
+        new_index = (alphabet_array.index(letter.downcase) + number) - (alphabet_array.size - 1)
+        alphabet_array[new_index - 1].upcase
+      end
     else
-      alphabet_array[alphabet_array.index(letter) + number]
+      if (alphabet_array.index(letter) + number) <= (alphabet_array.size - 1)
+        alphabet_array[alphabet_array.index(letter) + number]
+      else
+        new_index = (alphabet_array.index(letter) + number) - (alphabet_array.size - 1)
+        alphabet_array[new_index - 1]
+      end
     end
   end
-  p result
+result.join
 end
 
 #test
-caesar_cipher("ab !*ùGdEf", 5)
+p caesar_cipher("What a string!", 5)
