@@ -10,7 +10,9 @@ def caesar_cipher(string, number)
   
   my_string_array = string.chars
   result = my_string_array.map do |letter|
-    if letter == letter.upcase
+    if !alphabet_array.include?(letter.downcase)
+      letter
+    elsif letter == letter.upcase
       alphabet_array[alphabet_array.index(letter.downcase) + number].upcase
     else
       alphabet_array[alphabet_array.index(letter) + number]
@@ -20,4 +22,4 @@ def caesar_cipher(string, number)
 end
 
 #test
-caesar_cipher("abGdEf", 5)
+caesar_cipher("ab !*ùGdEf", 5)
