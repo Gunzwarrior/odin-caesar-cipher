@@ -6,7 +6,6 @@ def caesar_cipher(string, number)
                     "k", "l", "m", "n", "o",
                     "p", "q", "r", "s", "t",
                     "u", "v", "w", "x", "y", "z"]
-  # magic code
   
   my_string_array = string.chars
   result = my_string_array.map do |letter|
@@ -31,5 +30,5 @@ def caesar_cipher(string, number)
 result.join
 end
 
-#test
+# test
 p caesar_cipher("What a string!", 5)
