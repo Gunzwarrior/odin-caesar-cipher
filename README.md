@@ -8,5 +8,5 @@ caesar_cipher("What a string!", 5)
 
 Tips
   - remember how to convert a string into a number
-  - don't forget to wrap form z to a
+  - don't forget to wrap from z to a
   - don't forget to keep the same case
