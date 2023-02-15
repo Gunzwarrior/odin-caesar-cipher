@@ -1,4 +1,6 @@
-require './lib/caesar_cipher.rb'
+# frozen_string_literal: true
+
+require './lib/caesar_cipher'
 
 describe '#caesar_cipher' do
   it 'works with a basic string' do
