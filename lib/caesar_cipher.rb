@@ -29,6 +29,3 @@ def caesar_cipher(string, number)
   end
 result.join
 end
-
-# test
-p caesar_cipher("What a string!", 5)
